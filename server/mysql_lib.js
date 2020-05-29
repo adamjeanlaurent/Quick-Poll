@@ -13,7 +13,7 @@ exports.executeSql = (sqlQuery, callback) => {
     
     connection.connect((error) => {
         console.log('connected to DB');
-    });
+    }); 
     
     connection.query(sqlQuery, function (error, results, fields) {
         if (!error) {
