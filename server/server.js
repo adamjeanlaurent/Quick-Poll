@@ -1,6 +1,6 @@
 const express = require('express');
 
-require('dotenv').config();
+require('dotenv').config({path: '../.env'});
 
 const app = express();
 
@@ -18,6 +18,6 @@ app.use((req, res, next) => {
 
 app.use('/api/poll', pollRoutes);
 
-app.listen(SERVER_PORT, () => {
-    console.log(`Server Running On Port ${SERVER_PORT}!`);
+app.listen(process.env.SERVER_PORT, () => {
+    console.log(`Server Running On Port ${process.env.SERVER_PORT}!`);
 });
