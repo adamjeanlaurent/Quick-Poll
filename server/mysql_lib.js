@@ -19,7 +19,7 @@ exports.executeSql = (sqlQuery, callback) => {
         if (!error) {
             return callback(results, error);
         }
-
+        
         return callback(null, error.message);
         });
     connection.end();

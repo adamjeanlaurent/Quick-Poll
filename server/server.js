@@ -4,7 +4,9 @@ require('dotenv').config({path: '../.env'});
 
 const app = express();
 
-const pollRoutes = require('./routes/poll');
+const createPollRoute = require('./routes/createPoll');
+
+const getPollRoute = require('./routes/getPoll');
 
 // CORS
 // Middleware To Set Headers
@@ -16,7 +18,9 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use('/api/poll', pollRoutes);
+app.use('/api/getPoll', getPollRoute);
+
+app.use('/api/createPoll', createPollRoute);
 
 app.listen(process.env.SERVER_PORT, () => {
     console.log(`Server Running On Port ${process.env.SERVER_PORT}!`);
